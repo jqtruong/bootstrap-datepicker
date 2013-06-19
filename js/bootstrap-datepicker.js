@@ -678,6 +678,7 @@
 							var day = parseInt(target.text(), 10)||1;
 							var year = this.viewDate.getUTCFullYear(),
 								month = this.viewDate.getUTCMonth();
+                                                        var mins = this.viewDate.getTimezoneOffset();
 							if (target.is('.old')) {
 								if (month === 0) {
 									month = 11;
@@ -693,7 +694,7 @@
 									month += 1;
 								}
 							}
-							this._setDate(UTCDate(year, month, day,0,0,0,0));
+							this._setDate(UTCDate(year, month, day,0,mins,0,0));
 						}
 						break;
 				}
